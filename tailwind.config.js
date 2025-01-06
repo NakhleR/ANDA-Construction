@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        fraunces: ['"Fraunces"', 'serif'],
+      },
+      colors: {
+        accent: '#FEFAF0'
+      }
+    },
   },
   plugins: [],
 }
