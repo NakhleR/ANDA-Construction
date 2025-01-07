@@ -10,7 +10,8 @@ export default {
         fraunces: ['"Fraunces"', 'serif'],
       },
       colors: {
-        accent: '#FEFAF0'
+        accent: '#FEFAF0',
+        accent2: '#403F2B',
       }
     },
   },

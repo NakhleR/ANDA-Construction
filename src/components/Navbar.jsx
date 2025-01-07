@@ -3,7 +3,7 @@ import { navLinks } from '../constants'
 
 const Navbar = () => {
     return (
-        <header className='bg-[#fefaef] flex w-full items-center justify-between p-5 sm:px-10'>
+        <header className='bg-accent flex w-full items-center justify-between p-5 sm:px-10'>
             <nav className='flex screen-max-width w-full'>
                 <img src='#' width={14} height={18} alt='logo' />
                 <div className='flex flex-1 items-center justify-center max-sm:hidden'>
