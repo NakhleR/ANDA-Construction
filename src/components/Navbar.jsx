@@ -1,9 +1,27 @@
-import React from 'react'
-import { navLinks } from '../constants'
+import React, { useState, useEffect } from 'react';
+import { navLinks } from '../constants';
 
 const Navbar = () => {
+    const [lastScrollTop, setLastScrollTop] = useState(0);
+    const [showNavbar, setShowNavbar] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollTop = window.scrollY;
+            if (currentScrollTop < lastScrollTop) {
+                setShowNavbar(true);
+            } else {
+                setShowNavbar(false);
+            }
+            setLastScrollTop(currentScrollTop);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [lastScrollTop]);
+
     return (
-        <header className='bg-accent flex w-full items-center justify-between p-5 sm:px-10'>
+        <header className={`bg-accent fixed top-0 w-full z-10 items-center justify-between p-5 sm:px-10 transition-all duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}>
             <nav className='flex screen-max-width w-full'>
                 <img src='#' width={14} height={18} alt='logo' />
                 <div className='flex flex-1 items-center justify-center max-sm:hidden'>
@@ -17,7 +35,7 @@ const Navbar = () => {
                 </div>
             </nav>
         </header>
-    )
+    );
 }
 
-export default Navbar
+export default Navbar;
