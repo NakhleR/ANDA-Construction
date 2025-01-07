@@ -24,7 +24,7 @@ const Services = () => {
                 {services.map((service, index) => (
                     <>
                         <div key={index} className="flex justify-between items-center py-6">
-                            <h2 className="text-2xl">{service.title}</h2>
+                            <h2 className="text-2xl font-avenir">{service.title}</h2>
                             <button className="border border-accent2 font-avenir px-6 py-2 text-accent2 hover:bg-accent3 transition-all">
                                 Book Now
                             </button>
