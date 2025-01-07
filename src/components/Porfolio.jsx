@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageList, ImageListItem, ImageListItemBar } from '@mui/material';
+import { ImageList, ImageListItem } from '@mui/material';
 import { itemData } from '../constants';
 
 const Portfolio = () => {
