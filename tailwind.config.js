@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        fraunces: ['"Fraunces"', 'serif'],
+        fraunces: ['"Fraunces"', 'sans-serif'],
+        avenir: ['"Avenir"', 'sans-serif'],
       },
       colors: {
         accent: '#FEFAF0',

@@ -8,7 +8,7 @@ const Navbar = () => {
                 <img src='#' width={14} height={18} alt='logo' />
                 <div className='flex flex-1 items-center justify-center max-sm:hidden'>
                     {navLinks.map((nav) => (
-                        <div className='cursor-pointer px-5 text-md text-gray font-poppins transition-all' key={nav}>
+                        <div className='cursor-pointer px-5 text-md text-gray font-avenir transition-all' key={nav}>
                             {nav}
                         </div>
                     ))}

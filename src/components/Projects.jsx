@@ -23,7 +23,7 @@ const Projects = () => {
 
     return (
         <section className='min-h-[100vh] p-20 w-full bg-accent'>
-            <h1 className='text-accent2 text-[35px] font-fraunces'>Projects</h1>
+            <h1 className='text-accent2 text-5xl font-fraunces font-bold'>Projects</h1>
             <hr className="border-t-2 border-accent2 my-4" />
             <div className="grid grid-cols-1 mt-11 md:grid-cols-3 gap-8">
                 {projects.map((project, index) => (
@@ -37,7 +37,6 @@ const Projects = () => {
                             <div className="flex items-center space-x-2">
                                 <span className="text-accent2">Learn more</span>
                             </div>
-
                         </div>
                     </div>
                 ))}

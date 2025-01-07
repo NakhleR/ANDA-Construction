@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'avenir';
+    font-family: 'Avenir';
     src: url('/assets/fonts/Avenir Light.ttf');
+}
+
+@font-face {
+    font-family: 'Fraunces';
+    src: url('/assets/fonts/Fraunces_120pt-Light.ttf');
 }
 
 * {
