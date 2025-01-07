@@ -4,10 +4,10 @@ import { itemData } from '../constants';
 
 const Portfolio = () => {
     return (
-        <section className="min-h-screen bg-accent p-12">
+        <section className="min-h-screen bg-accent p-14">
             <div className="text-center mb-16">
-                <h1 className="text-5xl font-fraunces font-bold text-accent2 mb-4">My Portfolio</h1>
-                <p className="text-lg font-avenir mb-11 text-accent2">Welcome to my portfolio. Explore my projects to learn more about what I do.</p>
+                <h1 className="text-5xl font-fraunces font-bold text-accent2 mb-4">Our Portfolio</h1>
+                <p className="text-lg font-avenir mb-11 text-accent2">Welcome to our portfolio. Explore our projects to learn more about what we do.</p>
                 <ImageList variant="masonry" cols={3} gap={15}>
                     {itemData.map((item) => (
                         <ImageListItem key={item.img}>
