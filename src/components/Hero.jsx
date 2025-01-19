@@ -3,7 +3,7 @@ import React from 'react';
 const Hero = () => {
     return (
         <section className="nav-height mt-[60px] relative w-full max-h-[80vh] hero-bg">
-            <div className="flex flex-col w-full items-center justify-center sm:items-start sm:justify-start h-full px-6 py-12 sm:p-20 gap-10 sm:gap-20">
+            <div className="flex flex-col w-full items-start justify-center sm:items-start sm:justify-start h-full px-6 py-12 sm:p-20 gap-10 sm:gap-20">
                 {/* Tagline */}
                 <span className="text-accent font-avenir text-lg sm:text-xl font-medium">
                     Innovative Designs
