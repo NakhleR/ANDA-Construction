@@ -7,7 +7,7 @@ import { navLinks } from '../constants';
 const Navbar = () => {
     const [lastScrollTop, setLastScrollTop] = useState(0);
     const [showNavbar, setShowNavbar] = useState(true);
-    const [isDrawerOpen, setIsDrawerOpen] = useState(false); // Drawer state
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -42,17 +42,18 @@ const Navbar = () => {
         >
             <nav className="flex screen-max-width w-full items-center justify-between">
                 {/* Logo */}
-                <img src="#" width={14} height={18} alt="logo" />
+                <img src="/assets/images/logo.png" width={60} height={60} alt="logo" />
 
                 {/* Desktop Navigation */}
                 <div className="hidden sm:flex flex-1 items-center justify-center">
                     {navLinks.map((nav) => (
-                        <div
+                        <a
+                            href={`#${nav.id}`}
                             className="cursor-pointer px-5 text-md text-gray font-avenir transition-all"
-                            key={nav}
+                            key={nav.id}
                         >
-                            {nav}
-                        </div>
+                            {nav.title}
+                        </a>
                     ))}
                 </div>
 
@@ -84,12 +85,13 @@ const Navbar = () => {
                         <h2 className="text-lg font-bold mb-4">Menu</h2>
                         <div className="flex flex-col space-y-4">
                             {navLinks.map((nav) => (
-                                <div
+                                <a
+                                    href={`#${nav.id}`}
                                     className="cursor-pointer text-md text-gray font-avenir transition-all"
-                                    key={nav}
+                                    key={nav.id}
                                 >
-                                    {nav}
-                                </div>
+                                    {nav.title}
+                                </a>
                             ))}
                         </div>
                     </div>

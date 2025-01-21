@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row justify-between items-start gap-8">
                 {/* Company Name */}
                 <h2 className="text-xl sm:text-2xl font-bold font-fraunces">
-                    Civil Engineering Firm
+                    ANDA Construction
                 </h2>
 
                 {/* Contact Info */}

@@ -33,6 +33,10 @@ body {
     max-width: 1120px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .hero-bg {
     padding-top: 0px;
     background-size: cover;

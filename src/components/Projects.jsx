@@ -4,19 +4,19 @@ import { projectImg1, projectImg2, projectImg3 } from '../utils';
 const projects = [
     {
         image: projectImg1,
-        title: 'Modern Corporate Buildings: Architecture',
+        title: 'Construction de maisons individuelles',
         description:
             'In the realm of modern architecture, corporate buildings stand as breathtaking examples of architectural mastery.',
     },
     {
         image: projectImg2,
-        title: 'Innovative Design Solutions for Corporate Spaces',
+        title: 'Construction d’immeubles résidentiels',
         description:
             'When it comes to creating corporate spaces that inspire innovation and productivity, the design of the office...',
     },
     {
         image: projectImg3,
-        title: 'Corporate Architecture Firm: Portfolio Showcase',
+        title: 'Construction de hangars industriels',
         description:
             'Welcome to our showcase of projects by a prestigious corporate architecture firm that focuses on innovative...',
     },
@@ -24,10 +24,10 @@ const projects = [
 
 const Projects = () => {
     return (
-        <section className="min-h-screen px-6 py-12 sm:px-14 md:px-24 w-full bg-accent">
+        <section id="nos-services" className="min-h-screen px-6 py-12 sm:px-14 md:px-24 w-full bg-accent">
             {/* Header */}
             <h1 className="text-accent2 text-3xl sm:text-4xl md:text-5xl font-fraunces font-bold text-left">
-                Projects
+                Nos Services
             </h1>
             <hr className="border-t-2 border-accent2 my-4 mx-auto w-full" />
 

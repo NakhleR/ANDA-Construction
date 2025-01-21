@@ -5,11 +5,11 @@ import { itemData } from '../constants';
 
 const Portfolio = () => {
     return (
-        <section className="min-h-screen bg-accent px-6 py-12 sm:px-14 md:px-24">
+        <section id='realisations' className="min-h-screen bg-accent px-6 py-12 sm:px-14 md:px-24">
             <div className="text-center mb-16">
                 {/* Section Header */}
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-fraunces font-bold text-accent2 mb-4">
-                    Our Portfolio
+                    Réalisations
                 </h1>
                 <p className="text-sm sm:text-lg font-avenir mb-11 text-accent2">
                     Welcome to our portfolio. Explore our projects to learn more about what we do.

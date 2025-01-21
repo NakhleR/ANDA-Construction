@@ -9,7 +9,7 @@ const Contact = () => {
     };
 
     return (
-        <section className="min-h-screen px-6 py-12 sm:px-14 md:px-24 w-full bg-accent">
+        <section id='contact' className="min-h-screen px-6 py-12 sm:px-14 md:px-24 w-full bg-accent">
             <div>
                 {/* Heading */}
                 <h2 className="text-accent2 font-fraunces font-bold text-2xl sm:text-3xl md:text-[35px] text-center sm:text-left">
@@ -22,29 +22,53 @@ const Contact = () => {
                         <form ref={form} onSubmit={sendEmail}>
                             {/* Input Fields */}
                             <div className="flex flex-col gap-4">
-                                <input
-                                    type="text"
-                                    placeholder="Your Name"
-                                    name="user_name"
-                                    required
-                                    className="bg-accent border placeholder-accent2 focus:border-accent2 focus:outline-accent2 text-accent2 font-avenir border-accent2 p-3"
-                                />
+                                <div className="flex gap-4">
+                                    <input
+                                        type="text"
+                                        placeholder="Nom"
+                                        name="user_nom"
+                                        required
+                                        className="flex-1 bg-accent border focus:rounded-none placeholder-accent2 focus:border-accent2 focus:outline-accent2 text-accent2 font-avenir border-accent2 p-3"
+                                    />
+                                    <input
+                                        type="text"
+                                        placeholder="Prénom"
+                                        name="user_prenom"
+                                        required
+                                        className="flex-1 bg-accent border focus:rounded-none placeholder-accent2 focus:border-accent2 focus:outline-accent2 text-accent2 font-avenir border-accent2 p-3"
+                                    />
+                                </div>
+                                <div className="flex gap-4">
+                                    <input
+                                        type="text"
+                                        placeholder="Adresse"
+                                        name="user_adresse"
+                                        required
+                                        className="flex-1 bg-accent border focus:rounded-none placeholder-accent2 focus:border-accent2 focus:outline-accent2 text-accent2 font-avenir border-accent2 p-3"
+                                    />
+                                    <input
+                                        type="text"
+                                        placeholder="Ville"
+                                        name="user_ville"
+                                        required
+                                        className="flex-1 bg-accent border focus:rounded-none placeholder-accent2 focus:border-accent2 focus:outline-accent2 text-accent2 font-avenir border-accent2 p-3"
+                                    />
+                                </div>
                                 <input
                                     type="email"
                                     placeholder="Email"
                                     name="user_email"
                                     required
-                                    className="bg-accent border placeholder-accent2 focus:border-accent2 focus:outline-accent2 text-accent2 font-avenir border-accent2 p-3"
+                                    className="bg-accent border focus:rounded-none placeholder-accent2 focus:border-accent2 focus:outline-accent2 text-accent2 font-avenir border-accent2 p-3"
                                 />
+                                <textarea
+                                    type="text"
+                                    name="project_description"
+                                    placeholder="Petite description de votre projet (dites nous plus sur votre projet)"
+                                    required
+                                    className="bg-accent border focus:rounded-none placeholder-accent2 focus:border-accent2 focus:outline-accent2 text-accent2 font-avenir border-accent2 p-3 w-full h-40"
+                                ></textarea>
                             </div>
-                            {/* Textarea */}
-                            <textarea
-                                type="text"
-                                name="message"
-                                placeholder="Message"
-                                required
-                                className="bg-accent border placeholder-accent2 focus:border-accent2 focus:outline-accent2 text-accent2 font-avenir border-accent2 p-3 w-full h-40 mt-4"
-                            ></textarea>
                             {/* Submit Button */}
                             <button
                                 type="submit"

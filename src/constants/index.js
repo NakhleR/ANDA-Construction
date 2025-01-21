@@ -1,4 +1,11 @@
-export const navLinks = ["Portfolio", "Blog", "Contact"];
+export const navLinks = [
+    { title: "Accueil", id: "accueil" },
+    { title: "Nos Services", id: "nos-services" },
+    { title: "Réalisations", id: "realisations" },
+    { title: "À propos", id: "a-propos" },
+    { title: "Contact", id: "contact" },
+];
+
 
 export const itemData = [
     {
