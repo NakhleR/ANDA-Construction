@@ -80,11 +80,18 @@ const Contact = () => {
                     </div>
 
                     {/* Adjacent Div */}
-                    <div className="w-full sm:w-[50%] p-4 sm:p-6 rounded-md text-center sm:text-left">
+                    <div className="w-full sm:w-[50%] p-4 sm:p-0 rounded-md text-center sm:text-left">
                         <p className="text-accent2 font-avenir">
                             Hello! We’d love to hear from you. Please fill out the form, and we’ll get back to you as
                             soon as possible.
                         </p>
+                        <div className='flex flex-col w-full h-full items-center justify-center'>
+                            <img
+                                width={400}
+                                src='/assets/images/contact.png'>
+
+                            </img>
+                        </div>
                     </div>
                 </div>
             </div>

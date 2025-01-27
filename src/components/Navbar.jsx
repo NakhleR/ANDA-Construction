@@ -3,6 +3,7 @@ import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { navLinks } from '../constants';
+import { Home, Briefcase, Info, Image, Mail } from 'lucide-react'; // Example icons from lucide-react
 
 const Navbar = () => {
     const [lastScrollTop, setLastScrollTop] = useState(0);
@@ -33,6 +34,15 @@ const Navbar = () => {
             return;
         }
         setIsDrawerOpen(open);
+    };
+
+    // Map navLinks to icons
+    const iconMap = {
+        accueil: <Home />,
+        'nos-services': <Briefcase />,
+        'a-propos': <Info />,
+        realisations: <Image />,
+        contact: <Mail />,
     };
 
     return (
@@ -87,10 +97,11 @@ const Navbar = () => {
                             {navLinks.map((nav) => (
                                 <a
                                     href={`#${nav.id}`}
-                                    className="cursor-pointer text-md text-gray font-avenir transition-all"
+                                    className="cursor-pointer flex items-center space-x-2 text-md text-gray font-avenir transition-all"
                                     key={nav.id}
                                 >
-                                    {nav.title}
+                                    {iconMap[nav.id]} {/* Icon */}
+                                    <span>{nav.title}</span>
                                 </a>
                             ))}
                         </div>
