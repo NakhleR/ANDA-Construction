@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { projectImg1, projectImg2, projectImg3 } from '../utils';
 
 const projects = [
@@ -23,26 +24,53 @@ const projects = [
 ];
 
 const Projects = () => {
+    const ref = useRef();
+    const isInView = useInView(ref, { once: true, margin: "-300px" });
+
     return (
-        <section id="nos-services" className="min-h-screen px-6 py-12 sm:px-14 md:px-24 w-full bg-accent">
+        <section
+            ref={ref}
+            id="nos-services"
+            className="min-h-screen px-6 py-12 sm:px-14 md:px-24 w-full bg-accent"
+        >
             {/* Header */}
-            <h1 className="text-accent2 text-3xl sm:text-4xl md:text-5xl font-fraunces font-bold text-left">
+            <motion.h1
+                className="text-accent2 text-3xl sm:text-4xl md:text-5xl font-fraunces font-bold text-left"
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6 }}
+            >
                 Nos Services
-            </h1>
-            <hr className="border-t-2 border-accent2 my-4 mx-auto w-full" />
+            </motion.h1>
+
+            <motion.hr
+                className="border-t-2 border-accent2 my-4 mx-auto w-full"
+                initial={{ scaleX: 0 }}
+                animate={isInView ? { scaleX: 1 } : {}}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+            />
 
             {/* Grid Layout */}
-            <div className="grid grid-cols-1 mt-8 gap-8 sm:grid-cols-2 md:grid-cols-3">
+            <motion.div
+                className="grid grid-cols-1 mt-8 gap-8 sm:grid-cols-2 md:grid-cols-3"
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.2 }}
+            >
                 {projects.map((project, index) => (
-                    <div
+                    <motion.div
                         key={index}
                         className="shadow-lg rounded-lg overflow-hidden bg-white transform transition-transform hover:scale-105"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : {}}
+                        whileHover={{ scale: 1.05 }}
                     >
                         {/* Project Image */}
                         <img
                             src={project.image}
                             alt={project.title}
                             className="w-full h-60 object-cover"
+                            whileHover={{ scale: 1.08 }}
                         />
 
                         {/* Project Details */}
@@ -61,9 +89,9 @@ const Projects = () => {
                                 Learn more
                             </button>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
-            </div>
+            </motion.div>
         </section>
     );
 };

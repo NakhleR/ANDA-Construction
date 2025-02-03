@@ -1,6 +1,10 @@
 import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 const Contact = () => {
+    const ref = useRef();
+    const isInView = useInView(ref, { once: true, margin: "-100px" });
+
     const form = useRef();
 
     const sendEmail = (e) => {
@@ -9,16 +13,31 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="min-h-screen px-4 sm:px-6 py-12 md:px-24 w-full bg-accent">
+        <section
+            ref={ref}
+            id="contact"
+            className="min-h-screen px-4 sm:px-6 py-12 md:px-24 w-full bg-accent"
+        >
             <div>
                 {/* Heading */}
-                <h2 className="text-accent2 font-fraunces font-bold text-2xl sm:text-3xl md:text-[35px] text-center sm:text-left">
+                <motion.h2
+                    className="text-accent2 font-fraunces font-bold text-2xl sm:text-3xl md:text-[35px] text-center sm:text-left"
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={isInView ? { y: 0, opacity: 1 } : {}}
+                    transition={{ duration: 0.6 }}
+                >
                     Looking Forward to working with you
-                </h2>
+                </motion.h2>
+
                 {/* Content */}
                 <div className="flex flex-col-reverse sm:flex-row justify-between gap-8 mt-10 mb-10">
                     {/* Form Section */}
-                    <div className="w-full sm:w-[50%]">
+                    <motion.div
+                        className="w-full sm:w-[50%]"
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={isInView ? { y: 0, opacity: 1 } : {}}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                    >
                         <form ref={form} onSubmit={sendEmail}>
                             {/* Input Fields */}
                             <div className="flex flex-col gap-4">
@@ -70,29 +89,39 @@ const Contact = () => {
                                 ></textarea>
                             </div>
                             {/* Submit Button */}
-                            <button
+                            <motion.button
                                 type="submit"
                                 className="border mt-4 border-accent2 font-avenir px-4 sm:px-6 py-2 text-sm sm:text-base text-accent2 hover:bg-accent3 transition-all w-auto sm:w-auto"
+                                initial={{ y: 10, opacity: 0 }}
+                                animate={isInView ? { y: 0, opacity: 1 } : {}}
+                                transition={{ duration: 0.5, delay: 0.3 }}
                             >
                                 Send
-                            </button>
+                            </motion.button>
                         </form>
-                    </div>
+                    </motion.div>
 
                     {/* Adjacent Div */}
-                    <div className="w-full sm:w-[50%] p-4 sm:p-0 rounded-md text-center sm:text-left">
+                    <motion.div
+                        className="w-full sm:w-[50%] p-4 sm:p-0 rounded-md text-center sm:text-left"
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={isInView ? { y: 0, opacity: 1 } : {}}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                    >
                         <p className="text-accent2 font-avenir">
                             Hello! We’d love to hear from you. Please fill out the form, and we’ll get back to you as
                             soon as possible.
                         </p>
                         <div className='flex flex-col w-full h-full items-center justify-center'>
-                            <img
+                            <motion.img
                                 width={400}
-                                src='/assets/images/contact.png'>
-
-                            </img>
+                                src='/assets/images/contact.png'
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                                transition={{ duration: 0.6, delay: 0.5 }}
+                            />
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
