@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { projectImg1, projectImg2, projectImg3 } from '../utils';
 
@@ -25,13 +25,18 @@ const projects = [
 
 const Projects = () => {
     const ref = useRef();
-    const isInView = useInView(ref, { once: true, margin: "-300px" });
+    const isInView = useInView(ref, { once: true, margin: "-100px", threshold: 0.2 }); // ✅ Fix margin & add threshold
+
+    // Debugging: Check if the section is actually in view
+    useEffect(() => {
+        console.log("Projects section is in view:", isInView);
+    }, [isInView]);
 
     return (
         <section
             ref={ref}
             id="nos-services"
-            className="min-h-screen px-6 py-12 sm:px-14 md:px-24 w-full bg-accent"
+            className="min-h-[90vh] px-6 py-12 sm:px-14 md:px-24 w-full bg-accent" // ✅ Ensuring min-height is enough
         >
             {/* Header */}
             <motion.h1
@@ -66,7 +71,7 @@ const Projects = () => {
                         whileHover={{ scale: 1.05 }}
                     >
                         {/* Project Image */}
-                        <img
+                        <motion.img
                             src={project.image}
                             alt={project.title}
                             className="w-full h-60 object-cover"
