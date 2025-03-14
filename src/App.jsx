@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar"
 import Portfolio from "./components/Porfolio"
 import Projects from "./components/Projects"
 import Services from "./components/Services"
+import StickyHighlights from "./components/StickyHighlights"
 
 const App = () => {
 
@@ -15,6 +16,7 @@ const App = () => {
       <Hero />
       <Projects />
       <About />
+      <StickyHighlights />
       <Portfolio />
       <Contact />
       <Footer />
