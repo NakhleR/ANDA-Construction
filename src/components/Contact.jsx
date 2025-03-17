@@ -1,5 +1,8 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import emailjs from '@emailjs/browser';
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
     const ref = useRef();
@@ -9,7 +12,26 @@ const Contact = () => {
 
     const sendEmail = (e) => {
         e.preventDefault();
-        // Logic to handle email submission
+
+        emailjs
+            .sendForm('service_l93gjr8', 'template_r8ddlpe', form.current, {
+                publicKey: 'GODvbfC6zE6uiLGdl',
+            })
+            .then(
+                () => {
+                    toast.success("Message sent successfully !", {
+                        position: "top-right",
+                        theme: 'light',
+                    });
+                    e.target.reset();
+                },
+                () => {
+                    toast.error("Error while sending message !", {
+                        position: "top-right",
+                        theme: 'light',
+                    });
+                },
+            );
     };
 
     return (
@@ -82,7 +104,7 @@ const Contact = () => {
                                 />
                                 <textarea
                                     type="text"
-                                    name="project_description"
+                                    name="message"
                                     placeholder="Petite description de votre projet (dites nous plus sur votre projet)"
                                     required
                                     className="w-full bg-accent border focus:rounded-none placeholder-accent2 focus:border-accent2 focus:outline-accent2 text-accent2 font-avenir border-accent2 p-3 h-40"
@@ -124,6 +146,9 @@ const Contact = () => {
                     </motion.div>
                 </div>
             </div>
+
+            {/* Toast notifications */}
+            <ToastContainer />
         </section>
     );
 };

@@ -37,8 +37,8 @@ const Footer = () => {
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: 0.3 }}
                 >
-                    <p>123-456-7890</p>
-                    <p>info@mysite.com</p>
+                    <p>+33 7 78 78 62 79</p>
+                    <p>hussein.wehbe@anda-construction.fr</p>
                 </motion.div>
 
                 {/* Address */}
@@ -48,9 +48,12 @@ const Footer = () => {
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: 0.4 }}
                 >
-                    <p>500 Terry Francine Street,</p>
-                    <p>6th Floor, San Francisco,</p>
-                    <p>CA 94158</p>
+                    <p>Hangar 105</p>
+                    <p>105 Allée Francois Mitterand</p>
+                    <p>Rouen 76100</p><br/>
+                    <p>4 Allée du Coucou</p>
+                    <p>Louviers 27400</p>
+                    
                 </motion.div>
             </div>
         </motion.footer>
