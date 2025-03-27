@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <motion.footer
             ref={ref}
-            className="bg-accent text-accent2 px-6 py-12 sm:px-14 md:px-24"
+            className="bg-accent text-accent2 px-6 py-12 sm:px-14 md:px-24 relative"
         >
             {/* Top Border */}
             <motion.div
@@ -19,7 +19,7 @@ const Footer = () => {
             />
 
             {/* Footer Content */}
-            <div className="flex flex-col md:flex-row justify-between items-start gap-8">
+            <div className="flex flex-col sm:flex-row justify-between items-start gap-8">
                 {/* Company Name */}
                 <motion.h2
                     className="text-xl sm:text-2xl font-bold font-fraunces"
@@ -50,12 +50,18 @@ const Footer = () => {
                 >
                     <p>Hangar 105</p>
                     <p>105 Allée Francois Mitterand</p>
-                    <p>Rouen 76100</p><br/>
+                    <p>Rouen 76100</p><br />
                     <p>4 Allée du Coucou</p>
                     <p>Louviers 27400</p>
-                    
                 </motion.div>
             </div>
+
+            {/* Logo at the bottom center */}
+            <a href='https://nexusco.fr' target='_blank' className='absolute bottom-0 w-full left-1/2 transform -translate-x-1/2 mt-4 mb-4 cursor-pointer'>
+                <span className='flex items-center justify-center'>
+                    Created by <img src='/assets/images/logo.svg' className='ml-2' width={120} height={120} alt="Logo" />
+                </span>
+            </a>
         </motion.footer>
     );
 };
