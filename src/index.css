@@ -1,53 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: 'Avenir';
-    src: url('/assets/fonts/Avenir Light.ttf');
+@layer base {
+  :root {
+    --background: 45 33% 95%;
+    --foreground: 30 10% 20%;
+
+    --card: 40 33% 98%;
+    --card-foreground: 30 10% 20%;
+
+    --popover: 40 33% 98%;
+    --popover-foreground: 30 10% 20%;
+
+    --primary: 200 60% 44%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 30% 92%;
+    --secondary-foreground: 30 10% 20%;
+
+    --muted: 40 30% 92%;
+    --muted-foreground: 30 10% 40%;
+
+    --accent: 40 30% 92%;
+    --accent-foreground: 30 10% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 30 15% 85%;
+    --input: 30 15% 85%;
+    --ring: 30 15% 85%;
+
+    --radius: 0.3rem;
+
+    /* Navbar height */
+    --navbar-height: 70px;
+  }
 }
 
-@font-face {
-    font-family: 'Fraunces';
-    src: url('/assets/fonts/Fraunces_120pt-Light.ttf');
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-cream text-text-dark font-sans pt-[var(--navbar-height)];
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+
+  html {
+    @apply text-[14px] sm:text-[16px];
+  }
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@layer components {
+  .page-title {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-medium text-text-dark mt-6 sm:mt-8 mb-4 sm:mb-6;
+  }
 
-body {
-    width: 100dvw;
-    overflow-x: hidden;
-    height: 100%;
-    background: "#fefaef";
-    user-select: none;
-}
+  .section-title {
+    @apply text-2xl sm:text-3xl md:text-4xl font-serif font-medium text-text-dark mb-3 sm:mb-4;
+  }
 
-.screen-max-width {
-    margin-inline-start: auto;
-    margin-inline-end: auto;
-    position: relative;
-    max-width: 1120px;
-}
+  .divider {
+    @apply w-full h-px bg-text-light/20 my-8 sm:my-12;
+  }
 
-html {
-    scroll-behavior: smooth;
+  .nav-link {
+    @apply text-text-dark hover:text-anda-blue transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-text-dark text-white px-4 sm:px-6 py-2 rounded hover:bg-text-medium transition-colors duration-200 text-sm sm:text-base;
+  }
+
+  .service-card {
+    @apply bg-white rounded-lg p-4 sm:p-6 shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+
+  /* Mobile responsive utilities */
+  .container {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Added responsive padding and margin utilities */
+  .py-responsive {
+    @apply py-6 sm:py-8 md:py-12 lg:py-16;
+  }
+
+  .px-responsive {
+    @apply px-4 sm:px-6 md:px-8;
+  }
+
+  .my-responsive {
+    @apply my-6 sm:my-8 md:my-12 lg:my-16;
+  }
+
+  .mx-responsive {
+    @apply mx-4 sm:mx-6 md:mx-8;
+  }
 }
 
 .hero-bg {
-    padding-top: 0px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-image: url('/assets/images/hero.png');
-}
-
-@layer utilities {
-    .nav-height {
-        @apply h-[calc(100vh-60px)];
-    }
+  padding-top: 0px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
 }
