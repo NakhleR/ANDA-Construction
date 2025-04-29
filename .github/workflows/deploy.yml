@@ -33,11 +33,38 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Create 404.html
+        run: |
+          echo '<!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="utf-8">
+            <title>Redirecting...</title>
+            <script>
+              // Single Page Apps for GitHub Pages
+              // MIT License
+              // https://github.com/rafgraph/spa-github-pages
+              var pathSegmentsToKeep = 0;
+              var l = window.location;
+              l.replace(
+                l.protocol + "//" + l.hostname + (l.port ? ":" + l.port : "") +
+                l.pathname.split("/").slice(0, 1 + pathSegmentsToKeep).join("/") + "/?/" +
+                l.pathname.slice(1).split("/").slice(pathSegmentsToKeep).join("/").replace(/&/g, "~and~") +
+                (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+                l.hash
+              );
+            </script>
+          </head>
+          <body>
+            Redirecting...
+          </body>
+          </html>' > dist/404.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v1
         with:
           path: "./dist"
 
@@ -50,4 +77,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v1
