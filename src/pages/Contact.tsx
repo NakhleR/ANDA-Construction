@@ -148,7 +148,7 @@ const Contact = () => {
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold text-text-dark">Adresse</h3>
-                    <p className="text-text-medium mt-1">123 Rue de l'Architecture<br />75001 Paris, France</p>
+                    <p className="text-text-medium mt-1">Hangar 105<br />105 Allée François Mitterrand<br />76100 Rouen</p>
                   </div>
                 </div>
 
@@ -160,7 +160,7 @@ const Contact = () => {
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold text-text-dark">Email</h3>
-                    <p className="text-text-medium mt-1">contact@hsein-civil.com</p>
+                    <p className="text-text-medium mt-1">hussein.wehbe@anda-construction.fr</p>
                   </div>
                 </div>
 
@@ -172,7 +172,7 @@ const Contact = () => {
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold text-text-dark">Téléphone</h3>
-                    <p className="text-text-medium mt-1">+33 1 23 45 67 89</p>
+                    <p className="text-text-medium mt-1">+33 6 64 28 36 23</p>
                   </div>
                 </div>
               </div>
