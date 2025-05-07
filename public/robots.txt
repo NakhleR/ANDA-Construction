@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://andaconstruction.com/sitemap.xml
+Sitemap: https://anda-construction.fr/sitemap.xml
