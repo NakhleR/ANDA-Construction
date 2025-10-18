@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import ScrollAnimation from '../components/ScrollAnimation';
 import { projectsData } from '../data/projectsData';
+import { Helmet } from 'react-helmet-async';
 
 const Index = () => {
   const { scrollY } = useScroll();
@@ -16,6 +17,48 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
+
+      <Helmet>
+        <title>Entreprise de construction à Rouen | Maisons, Immeubles, Industriel | ANDA Construction</title>
+        <meta name="description" content="Constructeur à Rouen spécialisé en maisons individuelles, immeubles résidentiels et hangars industriels. Qualité, délais, durabilité. Devis gratuit." />
+        <meta name="keywords" content="entreprise construction Rouen, constructeur maison Rouen, immeuble, bâtiment industriel, rénovation, gros oeuvre, maîtrise d'oeuvre, construction durable, entreprise BTP Normandie" />
+        <link rel="canonical" href="https://anda-construction.fr/" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Entreprise de construction à Rouen | ANDA Construction" />
+        <meta property="og:description" content="Maisons, immeubles et bâtiments industriels. Votre vision, notre expertise." />
+        <meta property="og:url" content="https://anda-construction.fr/" />
+        <meta property="og:image" content="https://anda-construction.fr/images/og-image.jpg" />
+        <meta property="og:locale" content="fr_FR" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Entreprise de construction à Rouen | ANDA Construction" />
+        <meta name="twitter:description" content="Maisons, immeubles et bâtiments industriels. Votre vision, notre expertise." />
+        <meta name="twitter:image" content="https://anda-construction.fr/images/og-image.jpg" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://anda-construction.fr/' }
+            ]
+          })}
+        </script>
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            url: 'https://anda-construction.fr',
+            potentialAction: {
+              '@type': 'SearchAction',
+              target: 'https://anda-construction.fr/?q={search_term_string}',
+              'query-input': 'required name=search_term_string'
+            }
+          })}
+        </script>
+      </Helmet>
 
       {/* Hero Section */}
       <section className="relative h-[60vh] sm:h-[70vh] flex items-center overflow-hidden">

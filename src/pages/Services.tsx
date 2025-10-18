@@ -2,11 +2,37 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollAnimation from '../components/ScrollAnimation';
+import { Helmet } from 'react-helmet-async';
 
 const Services = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
+
+      <Helmet>
+        <title>Entreprise de construction à Rouen | Nos services | ANDA Construction</title>
+        <meta name="description" content="Services de construction à Rouen: maisons individuelles, immeubles résidentiels, hangars industriels, rénovation et réhabilitation. Qualité, délais, durabilité." />
+        <meta name="keywords" content="services construction Rouen, constructeur maison, immeuble résidentiel, hangar industriel, rénovation, entreprise BTP Normandie" />
+        <link rel="canonical" href="https://anda-construction.fr/services" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Nos services de construction | ANDA Construction" />
+        <meta property="og:description" content="Maisons, immeubles, hangars industriels et rénovation à Rouen." />
+        <meta property="og:url" content="https://anda-construction.fr/services" />
+        <meta property="og:locale" content="fr_FR" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Nos services de construction | ANDA Construction" />
+        <meta name="twitter:description" content="Maisons, immeubles, hangars industriels et rénovation à Rouen." />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            name: 'Construction et rénovation',
+            serviceType: 'Maisons individuelles, immeubles résidentiels, hangars industriels, rénovation',
+            areaServed: { '@type': 'Place', name: 'Rouen, Normandie' },
+            provider: { '@type': 'Organization', name: 'ANDA Construction', url: 'https://anda-construction.fr' }
+          })}
+        </script>
+      </Helmet>
 
       <div className="container mx-auto px-4 py-6 sm:py-8 md:py-12">
         <ScrollAnimation>

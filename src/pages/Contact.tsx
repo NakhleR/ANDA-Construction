@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
 import emailjs from 'emailjs-com';
+import { Helmet } from 'react-helmet-async';
 
 const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -62,6 +63,39 @@ const Contact = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
+
+      <Helmet>
+        <title>Contact | ANDA Construction</title>
+        <meta name="description" content="Contactez ANDA Construction à Rouen pour un devis: maisons, immeubles, hangars industriels. Adresse: Hangar 105, 76100 Rouen. Téléphone: +33 6 64 28 36 23." />
+        <link rel="canonical" href="https://anda-construction.fr/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Contact | ANDA Construction" />
+        <meta property="og:description" content="Devis construction à Rouen: maisons, immeubles, industriel." />
+        <meta property="og:url" content="https://anda-construction.fr/contact" />
+        <meta property="og:locale" content="fr_FR" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Contact | ANDA Construction" />
+        <meta name="twitter:description" content="Devis construction à Rouen: maisons, immeubles, industriel." />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'HomeAndConstructionBusiness',
+            name: 'ANDA Construction',
+            url: 'https://anda-construction.fr',
+            email: 'hussein.wehbe@anda-construction.fr',
+            telephone: '+33 6 64 28 36 23',
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: 'Hangar 105, 105 Allée François Mitterrand',
+              postalCode: '76100',
+              addressLocality: 'Rouen',
+              addressRegion: 'Normandie',
+              addressCountry: 'FR'
+            },
+            areaServed: { '@type': 'AdministrativeArea', name: 'Normandie' }
+          })}
+        </script>
+      </Helmet>
 
       <div className="container mx-auto px-4 py-6 sm:py-8 md:py-12">
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-medium text-text-dark mb-6 sm:mb-8 text-center sm:text-left">Contactez-nous</h1>
@@ -155,7 +189,7 @@ const Contact = () => {
                 <div className="flex items-start">
                   <div className="text-text-dark mt-1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                      <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+                      <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1 2 2H2a2 2 0 0 1-2 2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
                     </svg>
                   </div>
                   <div className="ml-4">

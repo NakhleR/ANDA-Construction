@@ -2,11 +2,35 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollAnimation from '../components/ScrollAnimation';
+import { Helmet } from 'react-helmet-async';
 
 const About = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
+
+      <Helmet>
+        <title>À propos | ANDA Construction</title>
+        <meta name="description" content="ANDA Construction à Rouen: 15 ans d'expérience en construction de maisons, immeubles résidentiels et hangars industriels. Qualité, durabilité et transparence." />
+        <link rel="canonical" href="https://anda-construction.fr/about" />
+        <meta property="og:type" content="profile" />
+        <meta property="og:title" content="À propos d'ANDA Construction" />
+        <meta property="og:description" content="Entreprise de construction à Rouen: expertise en maisons, immeubles et industriel." />
+        <meta property="og:url" content="https://anda-construction.fr/about" />
+        <meta property="og:locale" content="fr_FR" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="À propos d'ANDA Construction" />
+        <meta name="twitter:description" content="Entreprise de construction à Rouen: expertise en maisons, immeubles et industriel." />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'ANDA Construction',
+            url: 'https://anda-construction.fr',
+            address: { '@type': 'PostalAddress', addressLocality: 'Rouen', addressRegion: 'Normandie', addressCountry: 'FR' }
+          })}
+        </script>
+      </Helmet>
 
       <div className="container mx-auto px-4 py-6 sm:py-8 md:py-12">
         <ScrollAnimation>

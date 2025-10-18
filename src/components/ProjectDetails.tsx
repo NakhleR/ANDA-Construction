@@ -6,6 +6,7 @@ import { Project } from '../data/projectsData';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { getProjectById } from '../lib/api';
+import { Helmet } from 'react-helmet-async';
 
 const ProjectDetails = () => {
   const { id } = useParams<{ id: string }>();
@@ -95,6 +96,47 @@ const ProjectDetails = () => {
   return (
     <div className="min-h-screen bg-cream">
       <Navbar />
+
+      <Helmet>
+        <title>{`${project.title} | Réalisations | ANDA Construction`}</title>
+        <meta name="description" content={project.description} />
+        <link rel="canonical" href={`https://anda-construction.fr/projects/${project.id}`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={`${project.title} | ANDA Construction`} />
+        <meta property="og:description" content={project.description} />
+        <meta property="og:url" content={`https://anda-construction.fr/projects/${project.id}`} />
+        <meta property="og:image" content={project.image} />
+        <meta property="og:locale" content="fr_FR" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${project.title} | ANDA Construction`} />
+        <meta name="twitter:description" content={project.description} />
+        <meta name="twitter:image" content={project.image} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Project',
+            name: project.title,
+            description: project.description,
+            image: project.image,
+            url: `https://anda-construction.fr/projects/${project.id}`,
+            location: { '@type': 'Place', name: project.location },
+            client: { '@type': 'Organization', name: project.client },
+            datePublished: project.year
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://anda-construction.fr/' },
+              { '@type': 'ListItem', position: 2, name: 'Réalisations', item: 'https://anda-construction.fr/projects' },
+              { '@type': 'ListItem', position: 3, name: project.title, item: `https://anda-construction.fr/projects/${project.id}` }
+            ]
+          })}
+        </script>
+      </Helmet>
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
