@@ -26,44 +26,76 @@
   <meta property="og:description"
     content="ANDA Construction - Spécialistes des maisons individuelles, immeubles résidentiels et hangars industriels" />
   <meta property="og:image" content="https://anda-construction.fr/images/og-image.jpg" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="ANDA Construction" />
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://anda-construction.fr/" />
-  <meta property="twitter:title" content="ANDA Construction - Votre vision, notre expertise" />
-  <meta property="twitter:description"
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://anda-construction.fr/" />
+  <meta name="twitter:title" content="ANDA Construction - Votre vision, notre expertise" />
+  <meta name="twitter:description"
     content="ANDA Construction - Spécialistes des maisons individuelles, immeubles résidentiels et hangars industriels" />
-  <meta property="twitter:image" content="https://anda-construction.fr/images/og-image.jpg" />
+  <meta name="twitter:image" content="https://anda-construction.fr/images/og-image.jpg" />
+
+  <!-- Structured Data - Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ANDA Construction",
+    "url": "https://anda-construction.fr",
+    "logo": "https://anda-construction.fr/logo.png",
+    "description": "Entreprise de construction spécialisée dans les maisons individuelles, immeubles résidentiels et bâtiments industriels à Rouen",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Rouen",
+      "addressCountry": "FR"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "url": "https://anda-construction.fr/contact"
+    },
+    "sameAs": [
+      "https://anda-construction.fr"
+    ]
+  }
+  </script>
 
   <!-- Structured Data - LocalBusiness -->
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "ANDA Construction",
-      "image": "https://anda-construction.fr/logo.png",
-      "url": "https://anda-construction.fr",
-      "telephone": "+33 6 64 28 36 23",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "105 Allée François Mitterrand",
-        "addressLocality": "Rouen",
-        "postalCode": "76000",
-        "addressCountry": "FR"
-      },
-      "geo": {
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ANDA Construction",
+    "image": "https://anda-construction.fr/logo.png",
+    "url": "https://anda-construction.fr",
+    "description": "Entreprise de construction spécialisée dans les maisons individuelles, immeubles résidentiels et bâtiments industriels",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Rouen",
+      "addressRegion": "Normandie",
+      "addressCountry": "FR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 49.4431,
+      "longitude": 1.0993
+    },
+    "openingHours": "Mo-Fr 08:00-18:00",
+    "telephone": "+33-2-XX-XX-XX-XX",
+    "priceRange": "€€€",
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
         "@type": "GeoCoordinates",
-        "latitude": 49.43971207608114,
-        "longitude": 1.0788641257521252
+        "latitude": 49.4431,
+        "longitude": 1.0993
       },
-      "sameAs": [
-        "https://www.facebook.com/andaconstruction",
-        "https://www.instagram.com/andaconstruction",
-        "https://www.linkedin.com/company/andaconstruction"
-      ]
+      "geoRadius": "50000"
     }
+  }
   </script>
-
   <!-- GitHub Pages SPA routing fix -->
   <script type="text/javascript">
     (function (l) {
@@ -77,7 +109,7 @@
       }
     }(window.location))
   </script>
-  <script type="module" crossorigin src="/assets/index-Dug6HS6q.js"></script>
+  <script type="module" crossorigin src="/assets/index-DnhDKZiA.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-Cu60i6Zs.css">
 </head>
 
